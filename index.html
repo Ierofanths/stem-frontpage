@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ο STEM Education - Δεξιότητες για το Μέλλον</title>
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --primary-dark: #5568d3;
+            --secondary-color: #764ba2;
+            --accent-orange: #e67e22;
+            --accent-green: #27ae60;
+            --accent-purple: #9b59b6;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom center no-repeat;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .slogan {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .cta-button {
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 1.1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            background: #fafafa;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Video Section */
+        .video-section {
+            background: var(--bg-light);
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--text-dark);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* Four Pillars Image */
+        .pillars-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin: 3rem auto 4rem;
+            display: block;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-top: 5px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:nth-child(1) { border-top-color: #3498db; }
+        .feature-card:nth-child(2) { border-top-color: var(--accent-orange); }
+        .feature-card:nth-child(3) { border-top-color: var(--accent-green); }
+        .feature-card:nth-child(4) { border-top-color: var(--accent-purple); }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .feature-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .feature-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        /* Split Section */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .split-section.reverse {
+            direction: rtl;
+        }
+        
+        .split-section.reverse > * {
+            direction: ltr;
+        }
+        
+        .split-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .journey-step {
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .journey-step:nth-child(1) { border-left-color: var(--accent-orange); }
+        .journey-step:nth-child(2) { border-left-color: var(--accent-green); }
+        .journey-step:nth-child(3) { border-left-color: var(--accent-purple); }
+        
+        .journey-step:hover {
+            padding-left: 2.5rem;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 8px;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+        
+        .journey-step h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .journey-step p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        .split-image {
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .split-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .split-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .slogan {
+                font-size: 1.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .card-grid,
+            .split-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .split-section.reverse {
+                direction: ltr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .feature-card {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .slogan {
+                font-size: 1.3rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .video-section {
+                padding: 3rem 0;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Utility Classes */
+        .bg-light {
+            background: var(--bg-light);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Ο STEM Education</h1>
+            <div class="slogan">Φαντάζομαι ιδέες. Υλοποιώ λύσεις. Μετασχηματίζω την πραγματικότητα.</div>
+            <p class="hero-subtitle">20 χρόνια εμπειρίας στην ανάπτυξη ολοκληρωμένων εκπαιδευτικών προγραμμάτων STEM</p>
+            <button class="cta-button">Ανακαλύψτε τα Προγράμματά μας</button>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">Η Φιλοσοφία μιας Σύγχρονης STEM Εκπαίδευσης</h2>
+            <p class="section-subtitle">Μάθετε πώς μετατρέπουμε τους μαθητές από παθητικούς καταναλωτές σε δημιουργούς τεχνολογίας</p>
+            <div class="video-container">
+                <iframe 
+        src="https://www.youtube.com/embed/VgLXp-mQZd0" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four Pillars Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Περισσότερο από STEM: Δεξιότητες για το Μέλλον</h2>
+            <p class="section-intro">
+                Το πρόγραμμά μας μεταμορφώνει τα παιδιά από παθητικούς καταναλωτές σε δημιουργούς τεχνολογίας, 
+                εξοπλίζοντάς τα για κάθε πτυχή της ζωής τους μέσα από τέσσερις βασικούς πυλώνες.
+            </p>
+            
+            <img src="images/top_of_page.png" alt="Οι 4 Πυλώνες της Μεθοδολογίας STEM" class="pillars-image">
+            
+            <div class="card-grid">
+                <div class="feature-card">
+                    <div class="icon">🧠</div>
+                    <h3>Ανάπτυξη Δεξιοτήτων Ζωής</h3>
+                    <p>
+                        Μαθαίνουν να σκέφτονται συστηματικά, αποκτώντας υπομονή, επιμονή, μεθοδικότητα 
+                        και κριτική σκέψη για την επίλυση σύνθετων προβλημάτων. Αναπτύσσουν hands-on 
+                        δεξιότητες που θα τα συνοδεύουν σε όλη τους τη ζωή.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon">💻</div>
+                    <h3>Από Καταναλωτές, Δημιουργοί Τεχνολογίας</h3>
+                    <p>
+                        Γίνονται δημιουργοί τεχνολογίας, κατανοώντας πώς λειτουργούν τα ψηφιακά συστήματα 
+                        και αποκτώντας το θάρρος να μετατρέπουν τις ιδέες τους σε πράξη. Αντιμετωπίζουν 
+                        την παραπληροφόρηση με κριτική σκέψη.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>Καλλιέργεια Επιχειρηματικότητας</h3>
+                    <p>
+                        Αναπτύσσουν αίσθηση πρωτοβουλίας και μαθαίνουν να διαχειρίζονται έργα από τη σύλληψη 
+                        της ιδέας έως την τελική παρουσίαση, όπως σε έναν πραγματικό διαγωνισμό. Συνεργάζονται, 
+                        επιλύουν προβλήματα και παρουσιάζουν τη δουλειά τους.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="icon">🌍</div>
+                    <h3>Διαμόρφωση Αξιών</h3>
+                    <p>
+                        Συνδέουν την τεχνολογία με την κοινωνία, καλλιεργώντας κοινωνική και περιβαλλοντική ευθύνη. 
+                        Κατανοούν ότι η καινοτομία πρέπει να υπηρετεί το κοινό καλό και τη βιωσιμότητα, 
+                        σύμφωνα με τους 17 στόχους του ΟΗΕ.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Η Μαθησιακή Διαδρομή: Από το Παιχνίδι στην Καινοτομία</h2>
+            <p class="section-intro">
+                Μια δομημένη διαδρομή που εξελίσσεται από τα θεμέλια της υπολογιστικής σκέψης 
+                έως σύνθετες εφαρμογές Τεχνητής Νοημοσύνης και Internet of Things
+            </p>
+            
+            <div class="split-section reverse">
+                <div class="split-image">
+                    <img src="images/unnamed.png" alt="Η Μαθησιακή Διαδρομή από το Δημοτικό στο Γυμνάσιο">
+                </div>
+                
+                <div class="split-content">
+                    <h3>Βήμα προς Βήμα προς το Μέλλον</h3>
+                    
+                    <div class="journey-step">
+                        <h4>🎨 Δημοτικό Α'-Γ': Θεμέλια Υπολογιστικής Σκέψης</h4>
+                        <p>
+                            Εισαγωγή στον οπτικό προγραμματισμό με Scratch Jr και βασική ρομποτική 
+                            με Lego WeDo. Τα παιδιά μαθαίνουν να σκέφτονται υπολογιστικά μέσα από 
+                            παιχνίδι και δημιουργία.
+                        </p>
+                    </div>
+                    
+                    <div class="journey-step">
+                        <h4>🔧 Δημοτικό Δ'-Στ': Αυτοματισμοί & Τεχνητή Νοημοσύνη</h4>
+                        <p>
+                            Κατασκευή αυτόνομων συστημάτων με micro:bit και projects με εισαγωγή 
+                            στην AI. Συνδυασμός εφαρμογών Τεχνητής Νοημοσύνης και Internet of Things.
+                        </p>
+                    </div>
+                    
+                    <div class="journey-step">
+                        <h4>💡 Γυμνάσιο Α'-Γ': Προγραμματισμός & IoT</h4>
+                        <p>
+                            Μετάβαση σε κειμενικό προγραμματισμό με Python για τη δημιουργία 
+                            "έξυπνων" συστημάτων. Κατασκευή αυτόνομων projects με συνθέτες 
+                            εφαρμογές Τεχνολογίας.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why STEM Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Γιατί είναι τόσο σημαντικό το STEM;</h2>
+            <div class="section-intro" style="max-width: 900px;">
+                <p style="margin-bottom: 1.5rem;">
+                    <strong>STEM είναι μια εκπαιδευτική μεθοδολογία</strong> που αναπτύχθηκε ουσιαστικά 
+                    για να προάγει γνώσεις και δεξιότητες που λείπουν από τα αναλυτικά προγράμματα σπουδών. 
+                    Το σύνολο σχεδόν από τα 30 αναπτυσσόμενα επαγγέλματα μέσα στην επόμενη δεκαετία θα 
+                    απαιτήσουν τουλάχιστον κάποιο υπόβαθρο σε γνώσεις τεχνολογίας, μηχανικής, και μαθηματικών.
+                </p>
+                <p style="margin-bottom: 1.5rem;">
+                    Οι <strong>7Cs Skills του 21ου αιώνα</strong> - Κριτική σκέψη, Δημιουργικότητα, Συνεργασία, 
+                    Επικοινωνία, Πληροφορική και Εκπαίδευση στις ΤΠΕ, Διαπολιτισμική Κατανόηση και Αυτοδυναμία 
+                    Σταδιοδρομίας και Μάθησης - είναι ικανότητες απαραίτητες για έναν άνθρωπο του μέλλοντος.
+                </p>
+                <p>
+                    Επιπλέον, έχουμε υιοθετήσει στις δράσεις μας τους <strong>17 στόχους του ΟΗΕ για τη βιώσιμη ανάπτυξη</strong>, 
+                    προωθώντας τη σύνδεση της τεχνολογίας με την κοινωνική και περιβαλλοντική ευθύνη.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 600;">Έτοιμοι να ξεκινήσετε;</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.95;">
+                Ανακαλύψτε τα προγράμματά μας και δώστε στο παιδί σας τις δεξιότητες του μέλλοντος
+            </p>
+            <button class="cta-button">Εξερευνήστε τα Προγράμματα</button>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ετήσια Προγράμματα STEM και Ρομποτικής - STEM Education</title>
+    <style>
+        :root {
+            --primary-color: #667eea;
+            --primary-dark: #5568d3;
+            --secondary-color: #764ba2;
+            --accent-orange: #e67e22;
+            --accent-green: #27ae60;
+            --accent-purple: #9b59b6;
+            --accent-blue: #3498db;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 6rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom center no-repeat;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .slogan {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .cta-button {
+            background: var(--white);
+            color: var(--primary-color);
+            padding: 1.1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            background: #fafafa;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Video Section */
+        .video-section {
+            background: var(--bg-light);
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--text-dark);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-container:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Section */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-intro {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            font-size: 1.15rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* Infographic */
+        .infographic-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin: 3rem auto;
+            display: block;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Three Acts Section */
+        .three-acts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .act-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border-top: 5px solid;
+        }
+        
+        .act-card:nth-child(1) { border-top-color: var(--accent-blue); }
+        .act-card:nth-child(2) { border-top-color: var(--accent-green); }
+        .act-card:nth-child(3) { border-top-color: var(--accent-purple); }
+        
+        .act-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .act-number {
+            font-size: 3rem;
+            font-weight: 700;
+            opacity: 0.2;
+            margin-bottom: 1rem;
+        }
+        
+        .act-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .act-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Split Section */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 4rem 0;
+        }
+        
+        .split-section.reverse {
+            direction: rtl;
+        }
+        
+        .split-section.reverse > * {
+            direction: ltr;
+        }
+        
+        .split-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .split-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+        
+        .split-image {
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .split-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .split-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Programs Grid */
+        .programs-category {
+            margin: 4rem 0;
+        }
+        
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .program-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .program-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .program-content {
+            padding: 1.5rem;
+        }
+        
+        .program-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .program-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+        
+        .program-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border-left: 5px solid var(--primary-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 10px;
+        }
+        
+        .highlight-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .highlight-box p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .slogan {
+                font-size: 1.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .three-acts,
+            .split-section {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .split-section.reverse {
+                direction: ltr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .slogan {
+                font-size: 1.3rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+            
+            .video-section {
+                padding: 3rem 0;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Utility Classes */
+        .bg-light {
+            background: var(--bg-light);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Ετήσια Προγράμματα STEM και Ρομποτικής</h1>
+            <div class="slogan">Από την Ιδέα στην Καινοτομία: Το Ταξίδι του Μαθητή στον Κόσμο της Τεχνολογίας</div>
+            <p class="hero-subtitle">Ένα Ολοκληρωμένο Πρόγραμμα Σπουδών για το Δημοτικό και το Γυμνάσιο</p>
+            <a href="#programs" class="cta-button">Δείτε τα Προγράμματα</a>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title">Προγράμματα Σπουδών για το Μέλλον</h2>
+            <p class="section-subtitle">Δημιουργοί, όχι Απλοί Καταναλωτές</p>
+            <div class="video-container">
+                <iframe 
+        src="https://www.youtube.com/embed/-_6o57Wpfs0" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Journey Infographic -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Η Μαθησιακή Διαδρομή: Πλήρης Κάλυψη του Προγράμματος ΙΕΠ</h2>
+            <p class="section-intro">
+                Το πρόγραμμά μας καλύπτει το 100% των στόχων του ΙΕΠ, προσφέροντας μια ενιαία εκπαιδευτική πορεία 
+                από το Δημοτικό στο Γυμνάσιο με προοδευτική δυσκολία και εκμάθηση τεχνολογιών αιχμής.
+            </p>
+            <img src="images/Πρόγραμμα_-_infographic.png" alt="Πλήρης Κάλυψη Προγράμματος Σπουδών ΙΕΠ" class="infographic-image">
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Η Φιλοσοφία μας: Δημιουργοί, όχι Απλοί Καταναλωτές</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🧠</div>
+                    <h3>Υπολογιστική Σκέψη</h3>
+                    <p>Η θεμελιώδης γραμματική της επίλυσης προβλημάτων</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <h3>Δεξιότητες 4C</h3>
+                    <p>Καλλιέργεια Κριτικής Σκέψης, Δημιουργικότητας, Συνεργασίας και Επικοινωνίας</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚙️</div>
+                    <h3>Διεπιστημονικότητα (STEAM)</h3>
+                    <p>Αδιάλειπτη ενσωμάτωση Επιστήμης, Τεχνολογίας, Μηχανικής, Τεχνών και Μαθηματικών</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌱</div>
+                    <h3>Επίλυση Πραγματικών Προβλημάτων</h3>
+                    <p>Σύνδεση της μάθησης με απτές προκλήσεις από τη Φυσική έως τη Βιώσιμη ανάπτυξη</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Acts -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Η Εξέλιξη σε Τρεις Πράξεις</h2>
+            <p class="section-intro">
+                Ένα δομημένο ταξίδι μάθησης που μετατρέπει τους μαθητές από αρχάριους σε δημιουργούς τεχνολογίας
+            </p>
+            <div class="three-acts">
+                <div class="act-card">
+                    <div class="act-number">I</div>
+                    <h3>ΘΕΜΕΛΙΩΣΗ</h3>
+                    <p><strong>Πράξη I: Από το Παιχνίδι στις Αρχές</strong></p>
+                    <p>Μικρό Δημοτικό (Α', Β', Γ' Τάξεις)</p>
+                    <p>Οπτικός Προγραμματισμός & Εισαγωγή στη Ρομποτική με Scratch Junior και Lego WeDo. Κατασκευή κατάλληλα για τη διερεύνηση της Φυσικής.</p>
+                </div>
+                
+                <div class="act-card">
+                    <div class="act-number">II</div>
+                    <h3>ΑΥΤΟΝΟΜΙΑ</h3>
+                    <p><strong>Πράξη II: Από τις Αρχές στα Projects</strong></p>
+                    <p>Μεγάλο Δημοτικό (Δ', Ε', ΣΤ' Τάξεις)</p>
+                    <p>Ανάπτυξη αλγορίθμων αποφάσεων με micro:bit και TpBot. Εισαγωγή στην Τεχνητή Νοημοσύνη και επίλυση προβλημάτων του πραγματικού κόσμου.</p>
+                </div>
+                
+                <div class="act-card">
+                    <div class="act-number">III</div>
+                    <h3>ΔΗΜΙΟΥΡΓΙΑ</h3>
+                    <p><strong>Πράξη III: Από τα Projects στα Συστήματα</strong></p>
+                    <p>Γυμνάσιο (Α', Β', Γ' Τάξεις)</p>
+                    <p>Κειμενικός προγραμματισμός με Python και Internet of Things. Δημιουργία ολοκληρωμένων συστημάτων που συνδυάζουν αισθητήρες, ενεργοποιητές και δικτυακή επικοινωνία.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Section 1 -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-content">
+                    <h3>Τεχνητή Νοημοσύνη & Επίλυση Προβλημάτων</h3>
+                    <p>
+                        Στα προγράμματα του Ε' και ΣΤ' Δημοτικού, οι μαθητές εισάγονται στον κόσμο της Τεχνητής Νοημοσύνης 
+                        μέσα από συναρπαστικά projects όπως το <strong>"AI Lab Mate"</strong> και το <strong>"AI Holiday Island"</strong>.
+                    </p>
+                    <p>
+                        Χρησιμοποιώντας τεχνολογίες όπως η <strong>Nezha kit, AI Camera και 3D εκτύπωση</strong>, οι μαθητές 
+                        αναπτύσσουν έννοιες AI όπως η <strong>αναγνώριση εικόνας (image recognition)</strong> και η 
+                        <strong>ταξινόμηση (classification)</strong>.
+                    </p>
+                    <p>
+                        Τα projects τους επικεντρώνονται σε πραγματικά προβλήματα: από τη βιώσιμη διαχείριση ενός τουριστικού 
+                        προορισμού έως την κατασκευή ρομποτικών βοηθών για επιστήμονες, συνδέοντας την τεχνολογία με τους 
+                        <strong>Στόχους Βιώσιμης Ανάπτυξης των Ηνωμένων Εθνών</strong>.
+                    </p>
+                </div>
+                <div class="split-image">
+                    <img src="images/εικονα2.png" alt="AI Projects - Elementary School">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Section 2 -->
+    <section class="section">
+        <div class="container">
+            <div class="split-section reverse">
+                <div class="split-image">
+                    <img src="images/εικονα1.png" alt="Collaborative Learning Environment">
+                </div>
+                <div class="split-content">
+                    <h3>Κειμενικός Προγραμματισμός & Internet of Things</h3>
+                    <p>
+                        Στο Γυμνάσιο, οι μαθητές κάνουν τη <strong>μεγάλη μετάβαση</strong> από τον οπτικό στον κειμενικό 
+                        προγραμματισμό με <strong>Python</strong>, την επαγγελματική γλώσσα της επιστήμης δεδομένων και του IoT.
+                    </p>
+                    <p>
+                        Μέσα από hands-on πειραματισμό, σχεδιάζουν και υλοποιούν <strong>"έξυπνα" συστήματα</strong> που συνδυάζουν 
+                        αισθητήρες, ενεργοποιητές και δικτυακή επικοινωνία:
+                    </p>
+                    <p>
+                        • <strong>Αυτοματισμοί οικιών</strong><br>
+                        • <strong>Περιβαλλοντική παρακολούθηση</strong> (μετρήσεις θερμοκρασίας, υγρασίας, φωτεινότητας)<br>
+                        • <strong>Συστήματα λήψης αποφάσεων</strong> βασισμένα σε πραγματικά δεδομένα
+                    </p>
+                    <p>
+                        Καλύπτουν στόχους της Φυσικής Γ' Γυμνασίου για τον <strong>ηλεκτρισμό και τον ηλεκτρομαγνητισμό</strong>, 
+                        μετατρέποντας τη θεωρία σε πραγματικότητα.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Highlight -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Η Ολοκλήρωση της Μεταμόρφωσης</h2>
+            <div class="highlight-box">
+                <h3>Στο τέλος του ταξιδιού, οι μαθητές διαθέτουν:</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🎓</div>
+                        <h4>Βαθιά Κατανόηση</h4>
+                        <p>Αλγοριθμική σκέψη, δομές δεδομένων, αρχιτεκτονική λογισμικού</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💡</div>
+                        <h4>Προηγμένη Ικανότητα</h4>
+                        <p>Σχεδιασμός και υλοποίηση σύνθετων, διασυνδεδεμένων συστημάτων</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🔬</div>
+                        <h4>Επιστημονική Νοοτροπία</h4>
+                        <p>Εφαρμογή της επιστημονικής μεθόδου για τη βελτιστοποίηση τεχνολογικών λύσεων</p>
+                    </div>
+                </div>
+                <p style="margin-top: 2rem; font-size: 1.2rem; text-align: center; font-style: italic;">
+                    «Οι μαθητές μετατρέπονται από καταναλωτές σε δημιουργούς τεχνολογίας — ο κεντρικός στόχος 
+                    του προγράμματος σπουδών Πληροφορικής για το Γυμνάσιο.»
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs by Level -->
+    <section class="section" id="programs">
+        <div class="container">
+            <h2 class="section-title">Τα Προγράμματά μας ανά Βαθμίδα</h2>
+            
+            <!-- Preschool -->
+            <div class="programs-category">
+                <h3 class="category-title">🎨 Προσχολική Εκπαίδευση</h3>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Νηπιαγωγείο</span>
+                            <h4>Micro-Scientists</h4>
+                            <p>Πειράματα STEAM και Φυσικών Επιστημών μέσω διαδραστικών και διασκεδαστικών δραστηριοτήτων.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Νηπιαγωγείο</span>
+                            <h4>Bee-Engineer Plus+</h4>
+                            <p>Εξερεύνηση μέσω παιχνιδιού με κατασκευές, τηλεχειριστήριο και προγραμματισμό του ρομπότ Beebot.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Νηπιαγωγείο</span>
+                            <h4>Μικροί Εξερευνητές</h4>
+                            <p>STEAM για προσχολικές ηλικίες: εκπλήξεις, προβληματισμός, εξερευνήσεις και ανακαλύψεις.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Νηπιαγωγείο</span>
+                            <h4>Ο Θαλής και η Μέλισσα</h4>
+                            <p>Υπολογιστική σκέψη μέσα από αλγορίθμους, προσθέσεις, αφαιρέσεις και επίλυση προβλημάτων.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Elementary School -->
+            <div class="programs-category">
+                <h3 class="category-title">📚 Δημοτικό Σχολείο</h3>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Α' Δημοτικού</span>
+                            <h4>Young Engineers</h4>
+                            <p>Τα παιδιά μετατρέπονται σε μικρούς Μηχανικούς με hands-on δραστηριότητες κατασκευής.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Β' Δημοτικού</span>
+                            <h4>Creative Engineers</h4>
+                            <p>Από απλές έννοιες στον προγραμματισμό, δίνοντας κίνηση και «αισθήσεις» στα μοντέλα.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Γ' Δημοτικού</span>
+                            <h4>Power Engineers</h4>
+                            <p>Τα παιδιά ξεδιπλώνουν τη φαντασία και την εφευρετικότητά τους με πιο σύνθετες κατασκευές!</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Δ' Δημοτικού</span>
+                            <h4>Young Creators</h4>
+                            <p>Η φαντασία παίρνει τρισδιάστατη μορφή: από την ψηφιακή σύλληψη στην υλική κατασκευή.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Ε' Δημοτικού</span>
+                            <h4>AI Lab Mate</h4>
+                            <p>Σχεδιασμός και κατασκευή ρομποτικών βοηθών για επιστήμονες με χρήση AI.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Ε' Δημοτικού</span>
+                            <h4>Elementary Robotics</h4>
+                            <p>Πλήρως αυτόνομες ρομποτικές κατασκευές για εκπλήρωση συναρπαστικών αποστολών.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">ΣΤ' Δημοτικού</span>
+                            <h4>AI Holiday Island</h4>
+                            <p>Βιώσιμη διαχείριση τουριστικού προορισμού με AI και IoT λύσεις.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">ΣΤ' Δημοτικού</span>
+                            <h4>Advanced Robotics</h4>
+                            <p>Το μέλλον της εκπαιδευτικής ρομποτικής με εξειδικευμένους αισθητήρες και AI camera.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Physics Programs -->
+            <div class="programs-category">
+                <h3 class="category-title">🔬 Φυσικές Επιστήμες Δημοτικού</h3>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Α'-Δ' Δημοτικού</span>
+                            <h4>Μεγάλος Κόσμος για Μικρούς Ανθρώπους</h4>
+                            <p>Ένα συναρπαστικό ταξίδι γεμάτο πειράματα, ανακαλύψεις και διασκέδαση!</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Ε'-ΣΤ' Δημοτικού</span>
+                            <h4>Φυσικές Επιστήμες</h4>
+                            <p>Φυσική με ενσωμάτωση της Εκπαιδευτικής Ρομποτικής για ολιστική ανάπτυξη.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gymnasium -->
+            <div class="programs-category">
+                <h3 class="category-title">🎓 Γυμνάσιο</h3>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Α' Γυμνασίου</span>
+                            <h4>Smart Weather and Power Lab</h4>
+                            <p>Δημιουργία πλήρως λειτουργικού ενεργειακού και μετεωρολογικού σταθμού!</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Β' Γυμνασίου</span>
+                            <h4>Design & Technology</h4>
+                            <p>Εξερεύνηση Φυσικών Επιστημών και Ηλεκτρονικής μέσα από συναρπαστικά projects.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Γ' Γυμνασίου</span>
+                            <h4>Physical Computing & Python</h4>
+                            <p>Κειμενικός προγραμματισμός με Python και επαλήθευση νόμων της Φυσικής.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lyceum -->
+            <div class="programs-category">
+                <h3 class="category-title">🏫 Λύκειο</h3>
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-content">
+                            <span class="program-badge">Α' Λυκείου</span>
+                            <h4>IoT & Σύγχρονες Εφαρμογές</h4>
+                            <p>Εξερεύνηση της σύγχρονης τεχνολογίας που διαμορφώνει ήδη τη ζωή μας!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; font-weight: 600;">Ο Απόφοιτός μας: Έτοιμος για το 2030 και Πιο Πέρα</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 1rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+                Μέσα από αυτό το 9-ετές ταξίδι, διαμορφώνουμε ανθρώπους που είναι:
+            </p>
+            <div class="stats-grid" style="margin-top: 2rem;">
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">🤔 Κριτικά Σκεπτόμενοι Αναλυτές</h3>
+                    <p style="opacity: 0.9;">Critical Thinkers</p>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">⚡ Ευέλικτοι Επιλυτές Προβλημάτων</h3>
+                    <p style="opacity: 0.9;">Agile Problem-Solvers</p>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">💡 Δημιουργικοί Τεχνολόγοι</h3>
+                    <p style="opacity: 0.9;">Creative Technologists</p>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">🛡️ Υπεύθυνοι Ψηφιακοί Πολίτες</h3>
+                    <p style="opacity: 0.9;">Responsible Digital Citizens</p>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">🤝 Συνεργατικοί Καινοτόμοι</h3>
+                    <p style="opacity: 0.9;">Collaborative Innovators</p>
+                </div>
+            </div>
+            <a href="#" class="cta-button" style="margin-top: 2rem;">Εγγραφείτε Τώρα - Δωρεάν Δοκιμαστικό Μάθημα!</a>
+        </div>
+    </section>
+</body>
+</html>
